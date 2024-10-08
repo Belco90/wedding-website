@@ -1,5 +1,5 @@
 @layer reset, base, tokens, recipes, utilities;
 
 html {
-  height: 100%;
+	height: 100%;
 }
