@@ -1,18 +1,13 @@
+import { Heading } from '@/components/ui/heading'
+
 import { css } from 'styled-system/css'
 
 export default function HomePage() {
 	return (
 		<main className={css({ background: 'accent.default', height: 'full' })}>
-			<h1
-				className={css({
-					color: 'accent.fg',
-					fontWeight: 'bold',
-					textAlign: 'center',
-					pt: '16',
-				})}
-			>
+			<Heading as="h1" textAlign="center" fontFamily="handwriting">
 				¡Nos casamos!
-			</h1>
+			</Heading>
 		</main>
 	)
 }

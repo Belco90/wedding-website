@@ -14,7 +14,15 @@ export default defineConfig({
 		'./src/components/**/*.{ts,tsx,js,jsx}',
 		'./src/app/**/*.{ts,tsx,js,jsx}',
 	],
-	exclude: [],
+	theme: {
+		extend: {
+			tokens: {
+				fonts: {
+					handwriting: { value: 'var(--font-merienda)' },
+				},
+			},
+		},
+	},
 	jsxFramework: 'react',
 	outdir: 'styled-system',
 })
