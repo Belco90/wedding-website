@@ -1,4 +1,4 @@
-import { forwardRef, ReactNode } from 'react'
+import { forwardRef } from 'react'
 
 import { Spinner } from './spinner'
 import {
@@ -10,7 +10,7 @@ import { Center, styled } from 'styled-system/jsx'
 
 interface ButtonLoadingProps {
 	loading?: boolean
-	loadingText?: ReactNode
+	loadingText?: React.ReactNode
 }
 
 export interface ButtonProps extends StyledButtonProps, ButtonLoadingProps {}
