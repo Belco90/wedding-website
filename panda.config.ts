@@ -5,6 +5,7 @@ const customPreset = createPreset({
 	accentColor: 'mint',
 	grayColor: 'olive',
 	borderRadius: 'sm',
+	additionalColors: ['*'], // Add all colors from the theme
 })
 
 export default defineConfig({
@@ -18,7 +19,10 @@ export default defineConfig({
 		extend: {
 			tokens: {
 				fonts: {
+					body: { value: 'var(--font-outfit)' },
+					heading: { value: 'var(--font-outfit)' },
 					handwriting: { value: 'var(--font-merienda)' },
+					banner: { value: 'var(--font-exo)' },
 				},
 			},
 		},

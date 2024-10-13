@@ -13,7 +13,12 @@ export default function HomePage() {
 			className={css({ background: 'bg.emphasized', height: 'full', p: '8' })}
 		>
 			<Center flexDirection="column" justifyContent="center" color="accent.fg">
-				<Heading as="h1" fontSize="4xl" fontFamily="handwriting">
+				<Heading
+					as="h1"
+					fontSize="4xl"
+					fontFamily="handwriting"
+					color="amber.a11"
+				>
 					¡Nos casamos!
 				</Heading>
 				<Box
@@ -25,12 +30,13 @@ export default function HomePage() {
 					position="relative"
 				>
 					<Text
+						fontFamily="banner"
 						fontSize="6xl"
-						fontWeight="bold"
-						top="12"
+						top="14"
 						position="absolute"
 						color="accent.a11"
 						zIndex="banner"
+						textTransform="uppercase"
 					>
 						Marta
 					</Text>
@@ -41,16 +47,20 @@ export default function HomePage() {
 						style={{ objectFit: 'cover', opacity: 0.6 }}
 					/>
 					<Text
+						fontFamily="banner"
 						fontSize="6xl"
-						fontWeight="bold"
 						bottom="16"
 						position="absolute"
 						color="accent.a11"
 						zIndex="banner"
+						textTransform="uppercase"
 					>
 						Mario
 					</Text>
 				</Box>
+				<Text fontSize="lg" fontFamily="body" color="fg.default">
+					Más información próximamente
+				</Text>
 			</Center>
 		</main>
 	)
