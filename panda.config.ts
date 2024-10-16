@@ -2,10 +2,10 @@ import { defineConfig } from '@pandacss/dev'
 import { createPreset } from '@park-ui/panda-preset'
 
 const customPreset = createPreset({
-	accentColor: 'mint',
+	accentColor: 'lime',
 	grayColor: 'olive',
 	borderRadius: 'sm',
-	additionalColors: ['*'], // Add all colors from the theme
+	additionalColors: ['amber'],
 })
 
 export default defineConfig({
