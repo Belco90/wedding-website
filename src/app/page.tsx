@@ -10,7 +10,7 @@ import { Container, VStack } from 'styled-system/jsx'
 import type { ContainerProps } from 'styled-system/jsx'
 
 const Section = ({ children, ...props }: PropsWithChildren<ContainerProps>) => (
-	<Container maxW="md" h="90vh" {...props}>
+	<Container maxW="xl" h="90vh" {...props}>
 		{children}
 	</Container>
 )
@@ -18,7 +18,7 @@ const Section = ({ children, ...props }: PropsWithChildren<ContainerProps>) => (
 export default function HomePage() {
 	return (
 		<main className={css({ height: 'full' })}>
-			<Section>
+			<Section mb="env(safe-area-inset-bottom)">
 				<VStack height="full" justifyContent="space-around">
 					<Heading
 						as="h1"
@@ -30,8 +30,8 @@ export default function HomePage() {
 					</Heading>
 					<VStack
 						justifyContent="space-between"
-						height="400px"
-						width="290px"
+						height="300px"
+						width="300px"
 						borderWidth="6"
 						borderColor="amber.7"
 						position="relative"
@@ -52,7 +52,7 @@ export default function HomePage() {
 							fill
 							className={css({
 								objectFit: 'contain',
-								objectPosition: 'bottom',
+								objectPosition: 'center',
 								opacity: 0.2,
 							})}
 						/>

@@ -5,7 +5,7 @@ const customPreset = createPreset({
 	accentColor: 'lime',
 	grayColor: 'olive',
 	borderRadius: 'sm',
-	additionalColors: ['amber'],
+	additionalColors: ['*'],
 })
 
 export default defineConfig({
