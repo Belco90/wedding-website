@@ -3,7 +3,9 @@
 	"rules": {
 		// React
 		"react/self-closing-comp": "error",
+		"react/jsx-boolean-value": "warn",
 
+		// Import
 		"import/order": [
 			"error",
 			{
@@ -20,6 +22,7 @@
 					}
 				]
 			}
-		]
+		],
+		"import/consistent-type-specifier-style": ["error"]
 	}
 }
