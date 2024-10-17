@@ -1,22 +1,25 @@
 import Image from 'next/image'
+import { PropsWithChildren } from 'react'
 
 import { Heading } from '@/components/ui/heading'
 import { Text } from '@/components/ui/text'
 import ampersandPic from '@/public/ampersand.png'
 
 import { css } from 'styled-system/css'
-import { Container, Flex } from 'styled-system/jsx'
+import { Container, VStack } from 'styled-system/jsx'
+import type { ContainerProps } from 'styled-system/jsx'
+
+const Section = ({ children, ...props }: PropsWithChildren<ContainerProps>) => (
+	<Container maxW="md" h="90vh" {...props}>
+		{children}
+	</Container>
+)
 
 export default function HomePage() {
 	return (
-		<main className={css({ background: 'bg.emphasized', height: 'full' })}>
-			<Container py="4" height="full" maxW="md">
-				<Flex
-					flexDirection="column"
-					alignItems="center"
-					height="full"
-					justifyContent="space-around"
-				>
+		<main className={css({ height: 'full' })}>
+			<Section>
+				<VStack height="full" justifyContent="space-around">
 					<Heading
 						as="h1"
 						fontSize="xl"
@@ -25,19 +28,17 @@ export default function HomePage() {
 					>
 						¡Nos casamos!
 					</Heading>
-					<Flex
-						flexDirection="column"
+					<VStack
 						justifyContent="space-between"
-						alignItems="center"
-						height="300px"
-						width="210px"
-						borderWidth="4px"
+						height="400px"
+						width="290px"
+						borderWidth="6"
 						borderColor="amber.7"
 						position="relative"
 					>
 						<Text
 							fontFamily="banner"
-							fontSize="5xl"
+							fontSize="6xl"
 							color="accent.a11"
 							zIndex="banner"
 							textTransform="uppercase"
@@ -46,30 +47,48 @@ export default function HomePage() {
 						</Text>
 						<Image
 							src={ampersandPic}
-							alt="and"
+							alt="y"
 							priority
 							fill
-							style={{
+							className={css({
 								objectFit: 'contain',
-								objectPosition: 'center',
+								objectPosition: 'bottom',
 								opacity: 0.2,
-							}}
+							})}
 						/>
 						<Text
 							fontFamily="banner"
-							fontSize="5xl"
+							fontSize="6xl"
 							color="accent.a11"
 							zIndex="banner"
 							textTransform="uppercase"
 						>
 							Mario
 						</Text>
-					</Flex>
-					<Text fontSize="lg" fontFamily="body" color="fg.default">
+					</VStack>
+					<VStack>
+						<Heading
+							fontSize="xl"
+							fontFamily="handwriting"
+							color="fg.default"
+							as="h2"
+						>
+							21 Diciembre 2024
+						</Heading>
+						<Text fontSize="xl" fontFamily="handwriting" color="fg.default">
+							Jardines de San Telmo (Málaga)
+						</Text>
+					</VStack>
+				</VStack>
+			</Section>
+
+			<Section bgColor="bg.emphasized" h="auto">
+				<VStack>
+					<Heading as="h2" py="8">
 						Más información próximamente
-					</Text>
-				</Flex>
-			</Container>
+					</Heading>
+				</VStack>
+			</Section>
 		</main>
 	)
 }
