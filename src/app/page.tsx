@@ -32,12 +32,7 @@ export default function HomePage() {
 		>
 			<Section h="80vh">
 				<VStack height="full" justifyContent="space-around">
-					<Heading
-						as="h1"
-						size="3xl"
-						fontFamily="handwriting"
-						color="fg.default"
-					>
+					<Heading as="h1" size="3xl" fontFamily="heading" color="fg.default">
 						¡Nos casamos!
 					</Heading>
 					<VStack
@@ -81,13 +76,13 @@ export default function HomePage() {
 					<VStack>
 						<Heading
 							fontSize="xl"
-							fontFamily="handwriting"
+							fontFamily="heading"
 							color="fg.default"
 							as="h2"
 						>
 							21 Diciembre 2024
 						</Heading>
-						<Text fontSize="xl" fontFamily="handwriting" color="fg.default">
+						<Text fontSize="xl" fontFamily="heading" color="fg.default">
 							Jardines de San Telmo (Málaga)
 						</Text>
 					</VStack>
@@ -97,7 +92,7 @@ export default function HomePage() {
 			<Box bgColor="bg.muted">
 				<Section>
 					<VStack alignItems="flex-start">
-						<Heading as="h2" size="2xl" fontFamily="handwriting">
+						<Heading as="h2" size="2xl" fontFamily="heading">
 							Ceremonia y celebración
 						</Heading>
 						<Text>
@@ -129,7 +124,7 @@ export default function HomePage() {
 			<Box>
 				<Section>
 					<VStack alignItems="flex-start">
-						<Heading as="h2" size="2xl" fontFamily="handwriting">
+						<Heading as="h2" size="2xl" fontFamily="heading">
 							Cómo llegar
 						</Heading>
 

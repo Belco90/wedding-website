@@ -20,9 +20,17 @@ export default defineConfig({
 			tokens: {
 				fonts: {
 					body: { value: 'var(--font-outfit)' },
-					heading: { value: 'var(--font-outfit)' },
-					handwriting: { value: 'var(--font-merienda)' },
+					heading: { value: 'var(--font-merienda)' },
 					banner: { value: 'var(--font-exo)' },
+				},
+			},
+			recipes: {
+				link: {
+					base: {
+						color: 'accent.text',
+						textDecoration: 'underline',
+						_hover: { color: 'accent.emphasized' },
+					},
 				},
 			},
 		},
