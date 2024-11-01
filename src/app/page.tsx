@@ -3,7 +3,9 @@ import { PropsWithChildren } from 'react'
 import { FiHeart } from 'react-icons/fi'
 import { MdOutlineTapas, MdOutlineCelebration } from 'react-icons/md'
 
+import { LocationMap } from '@/components/location-map'
 import { Heading } from '@/components/ui/heading'
+import { Link } from '@/components/ui/link'
 import { Text } from '@/components/ui/text'
 import ampersandPic from '@/public/ampersand.png'
 
@@ -28,7 +30,7 @@ export default function HomePage() {
 		<main
 			className={css({ height: '100vh', pb: 'env(safe-area-inset-bottom)' })}
 		>
-			<Section h="90vh">
+			<Section h="80vh">
 				<VStack height="full" justifyContent="space-around">
 					<Heading
 						as="h1"
@@ -130,7 +132,22 @@ export default function HomePage() {
 						<Heading as="h2" size="2xl" fontFamily="handwriting">
 							Cómo llegar
 						</Heading>
-						<Text>Próximamente...</Text>
+
+						<Text>
+							La finca se encuentra cerca del Jardín Botánico (en dirección a
+							Ciudad Jardín, pasada la Hacienda Nadales). Podéis llegar
+							fácilmente desde el centro de Málaga, en aproximadamente 15
+							minutos.
+						</Text>
+
+						<Text>
+							Si necesitáis pedir un taxi, podéis hacerlo llamando al{' '}
+							<Link href="tel:952333333">952 333 333 (Unitaxi)</Link> o al{' '}
+							<Link href="tel:665827814">665 827 814 (Radiotaxi)</Link>.
+						</Text>
+
+						<Text>Aquí os dejamos la ubicación en Google Maps:</Text>
+						<LocationMap />
 					</VStack>
 				</Section>
 			</Box>
