@@ -134,7 +134,7 @@ export default function HomePage() {
 								obligatoria. Pero si queréis tener un detalle con nosotros,
 								podéis hacerlo a través de Bizum (en nuestros números de móvil
 								habituales), o en el siguiente número de cuenta: <br />
-								ESXX XXXX XXXX XXXX XXXX
+								ES20 1465 0100 94 1746596946
 							</li>
 						</ul>
 
