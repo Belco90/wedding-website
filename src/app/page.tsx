@@ -146,6 +146,40 @@ export default function HomePage() {
 					</VStack>
 				</Section>
 			</Box>
+
+			<Box bgColor="bg.muted">
+				<Section>
+					<VStack alignItems="flex-start">
+						<Heading as="h2" size="2xl" fontFamily="heading">
+							Otra información
+						</Heading>
+						<ul
+							className={css({
+								listStyleType: 'disc',
+								listStylePosition: 'inside',
+							})}
+						>
+							<li>
+								<strong>Código de vestimenta.</strong> ¡No hay ningún protocolo!
+								Viste como te apetezca, serás bienvenido igualmente.
+							</li>
+							<li>
+								<strong>Fecha de confirmación.</strong> Se ruega confirmación
+								antes del 4 de diciembre.
+							</li>
+							<li>
+								<strong>Regalo.</strong> El regalo es opcional, la asistencia
+								obligatoria. Pero si queréis tener un detalle con nosotros,
+								podéis hacerlo a través de Bizum (en nuestros números de móvil
+								habituales), o en el siguiente número de cuenta: <br />
+								ESXX XXXX XXXX XXXX XXXX
+							</li>
+						</ul>
+
+						<Text>¡Muchas gracias por acompañarnos!</Text>
+					</VStack>
+				</Section>
+			</Box>
 		</main>
 	)
 }
