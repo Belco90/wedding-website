@@ -1,17 +1,16 @@
-import Image from 'next/image'
 import { PropsWithChildren } from 'react'
 import { FiHeart } from 'react-icons/fi'
-import { MdOutlineTapas, MdOutlineCelebration } from 'react-icons/md'
+import { MdOutlineCelebration, MdOutlineTapas } from 'react-icons/md'
 
+import { InteractiveLogo } from '@/components/interactive-logo'
 import { LocationMap } from '@/components/location-map'
 import { Heading } from '@/components/ui/heading'
 import { Link } from '@/components/ui/link'
 import { Text } from '@/components/ui/text'
-import ampersandPic from '@/public/ampersand.png'
 
 import { css } from 'styled-system/css'
-import { Box, Container, VStack } from 'styled-system/jsx'
 import type { ContainerProps } from 'styled-system/jsx'
+import { Box, Container, VStack } from 'styled-system/jsx'
 
 const Section = ({ children, ...props }: PropsWithChildren<ContainerProps>) => (
 	<Container maxW="xl" py="8" {...props}>
@@ -35,44 +34,7 @@ export default function HomePage() {
 					<Heading as="h1" size="3xl" fontFamily="heading" color="fg.default">
 						¡Nos casamos!
 					</Heading>
-					<VStack
-						justifyContent="space-between"
-						height="300px"
-						width="300px"
-						borderWidth="6"
-						borderColor="amber.7"
-						position="relative"
-					>
-						<Text
-							fontFamily="banner"
-							fontSize="6xl"
-							color="accent.a11"
-							zIndex="banner"
-							textTransform="uppercase"
-						>
-							Marta
-						</Text>
-						<Image
-							src={ampersandPic}
-							alt="y"
-							priority
-							fill
-							className={css({
-								objectFit: 'contain',
-								objectPosition: 'center',
-								opacity: 0.2,
-							})}
-						/>
-						<Text
-							fontFamily="banner"
-							fontSize="6xl"
-							color="accent.a11"
-							zIndex="banner"
-							textTransform="uppercase"
-						>
-							Mario
-						</Text>
-					</VStack>
+					<InteractiveLogo />
 					<VStack>
 						<Heading
 							fontSize="xl"
