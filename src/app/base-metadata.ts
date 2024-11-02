@@ -7,4 +7,5 @@ export const openGraph: NonNullable<Metadata['openGraph']> = {
 	locale: 'es_ES',
 	url: '/',
 	title: DEFAULT_TITLE,
+	description: '¡Nos casamos!',
 }
