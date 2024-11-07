@@ -45,7 +45,7 @@ export default function HomePage() {
 							21 Diciembre 2024
 						</Heading>
 						<Text fontSize="xl" fontFamily="heading" color="fg.default">
-							Jardines de San Telmo (Málaga)
+							Málaga
 						</Text>
 					</VStack>
 				</VStack>
