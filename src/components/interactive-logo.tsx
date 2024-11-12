@@ -55,6 +55,7 @@ const InteractiveLogo: FC = () => {
 							src={couplePic}
 							alt="Marta y Mario en la Alcazaba de Málaga"
 							fill
+							quality={100}
 							className={css({
 								objectFit: 'cover',
 								objectPosition: 'center',
