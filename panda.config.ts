@@ -36,11 +36,12 @@ export default defineConfig({
 			keyframes: {
 				'shake-pause': {
 					'0%': { transform: 'translateX(0)' },
-					'5%': { transform: 'translateX(-10px)' },
-					'10%': { transform: 'translateX(10px)' },
-					'15%': { transform: 'translateX(-10px)' },
-					'20%': { transform: 'translateX(10px)' },
-					'25%': { transform: 'translateX(0)' },
+					'70%': { transform: 'translateX(0)' },
+					'75%': { transform: 'translateX(-15px)' },
+					'80%': { transform: 'translateX(15px)' },
+					'85%': { transform: 'translateX(-15px)' },
+					'90%': { transform: 'translateX(15px)' },
+					'95%': { transform: 'translateX(-15px)' },
 					'100%': { transform: 'translateX(0)' },
 				},
 				flip: {
