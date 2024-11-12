@@ -2,7 +2,7 @@ import { PropsWithChildren } from 'react'
 import { FiHeart } from 'react-icons/fi'
 import { MdOutlineCelebration, MdOutlineTapas } from 'react-icons/md'
 
-import { HomeDrawer } from '@/app/HomeDrawer'
+import { headingIds, HomeDrawer } from '@/app/HomeDrawer'
 import { InteractiveLogo } from '@/components/interactive-logo'
 import { LocationMap } from '@/components/location-map'
 import { Heading } from '@/components/ui/heading'
@@ -30,10 +30,16 @@ export default function HomePage() {
 		<main
 			className={css({ height: '100vh', pb: 'env(safe-area-inset-bottom)' })}
 		>
-			{/*<HomeDrawer />*/}
+			<HomeDrawer />
 			<Section h="80vh">
 				<VStack height="full" justifyContent="space-around">
-					<Heading as="h1" size="3xl" fontFamily="heading" color="fg.default">
+					<Heading
+						id={headingIds.home}
+						as="h1"
+						size="3xl"
+						fontFamily="heading"
+						color="fg.default"
+					>
 						¡Nos casamos!
 					</Heading>
 					<InteractiveLogo />
@@ -56,7 +62,12 @@ export default function HomePage() {
 			<Box bgColor="bg.muted">
 				<Section>
 					<VStack alignItems="flex-start">
-						<Heading as="h2" size="2xl" fontFamily="heading">
+						<Heading
+							id={headingIds.celebration}
+							as="h2"
+							size="2xl"
+							fontFamily="heading"
+						>
 							Ceremonia y celebración
 						</Heading>
 						<Text>
@@ -88,7 +99,12 @@ export default function HomePage() {
 			<Box>
 				<Section>
 					<VStack alignItems="flex-start">
-						<Heading as="h2" size="2xl" fontFamily="heading">
+						<Heading
+							id={headingIds.location}
+							as="h2"
+							size="2xl"
+							fontFamily="heading"
+						>
 							Cómo llegar
 						</Heading>
 
@@ -114,7 +130,12 @@ export default function HomePage() {
 			<Box bgColor="bg.muted">
 				<Section>
 					<VStack alignItems="flex-start">
-						<Heading as="h2" size="2xl" fontFamily="heading">
+						<Heading
+							id={headingIds.info}
+							as="h2"
+							size="2xl"
+							fontFamily="heading"
+						>
 							Otra información
 						</Heading>
 						<ul

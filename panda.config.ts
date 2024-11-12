@@ -29,7 +29,7 @@ export default defineConfig({
 					base: {
 						color: 'accent.text',
 						textDecoration: 'underline',
-						_hover: { color: 'accent.emphasized' },
+						_hover: { color: 'accent.12', textDecorationColor: 'accent.12' },
 					},
 				},
 			},

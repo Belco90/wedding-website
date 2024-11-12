@@ -1,6 +1,7 @@
+import { useDialog } from '@ark-ui/react'
 import { FC } from 'react'
 import { GiHamburgerMenu } from 'react-icons/gi'
-import { HiXMark } from 'react-icons/hi2'
+import { HiXMark, HiArrowUp } from 'react-icons/hi2'
 
 import { Drawer } from '@/components/ui/drawer'
 import { IconButton } from '@/components/ui/icon-button'
@@ -20,7 +21,7 @@ const TriggerButton = ({
 		borderRadius="full"
 		shadow="lg"
 		bgColor="accent.1"
-		color="gray.10"
+		color="gray.11"
 		aria-label={action === 'open' ? 'Abrir menú' : 'Cerrar menú'}
 		size="xs"
 		{...remainingProps}
@@ -58,24 +59,38 @@ const HomeDrawer: FC<DrawerRootProps> = (props) => {
 								display: 'flex',
 								flexDir: 'column',
 								gap: '4',
-								alignItems: 'center',
+								px: '4',
 								justifyContent: 'center',
 								fontWeight: 'bold',
+								'& a': {
+									textDecoration: 'none',
+								},
 							})}
 						>
 							<li>
-								<Link href={`#${headingIds.home}`}>¡Nos casamos!</Link>
+								<Drawer.Trigger asChild>
+									<Link href={`#${headingIds.home}`}>
+										Volver arriba
+										<HiArrowUp />
+									</Link>
+								</Drawer.Trigger>
 							</li>
 							<li>
-								<Link href={`#${headingIds.celebration}`}>
-									Ceremonia y celebración
-								</Link>
+								<Drawer.Trigger asChild>
+									<Link href={`#${headingIds.celebration}`}>
+										Ceremonia y celebración
+									</Link>
+								</Drawer.Trigger>
 							</li>
 							<li>
-								<Link href={`#${headingIds.location}`}>Cómo llegar</Link>
+								<Drawer.Trigger asChild>
+									<Link href={`#${headingIds.location}`}>Cómo llegar</Link>
+								</Drawer.Trigger>
 							</li>
 							<li>
-								<Link href={`#${headingIds.info}`}>Otra información</Link>
+								<Drawer.Trigger asChild>
+									<Link href={`#${headingIds.info}`}>Otra información</Link>
+								</Drawer.Trigger>
 							</li>
 						</ul>
 					</Drawer.Body>
