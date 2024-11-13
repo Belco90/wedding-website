@@ -14,7 +14,7 @@ import type { ContainerProps } from 'styled-system/jsx'
 import { Box, Container, VStack } from 'styled-system/jsx'
 
 const Section = ({ children, ...props }: PropsWithChildren<ContainerProps>) => (
-	<Container maxW="xl" py="8" {...props}>
+	<Container maxW="xl" py="8" fontSize="lg" {...props}>
 		{children}
 	</Container>
 )
@@ -45,14 +45,14 @@ export default function HomePage() {
 					<InteractiveLogo />
 					<VStack>
 						<Heading
-							fontSize="xl"
+							fontSize="2xl"
 							fontFamily="heading"
 							color="fg.default"
 							as="h2"
 						>
 							21 Diciembre 2024
 						</Heading>
-						<Text fontSize="xl" fontFamily="heading" color="fg.default">
+						<Text fontSize="2xl" fontFamily="heading" color="fg.default">
 							Málaga
 						</Text>
 					</VStack>
