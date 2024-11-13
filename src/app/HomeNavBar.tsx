@@ -1,6 +1,5 @@
 import { FC } from 'react'
-import { GiHamburgerMenu } from 'react-icons/gi'
-import { HiXMark, HiArrowUp } from 'react-icons/hi2'
+import { HiXMark, HiArrowUp, HiBars3 } from 'react-icons/hi2'
 
 import { Drawer } from '@/components/ui/drawer'
 import { IconButton } from '@/components/ui/icon-button'
@@ -23,10 +22,11 @@ const TriggerButton = ({
 		bgColor="accent.1"
 		color="gray.11"
 		aria-label={action === 'open' ? 'Abrir menú' : 'Cerrar menú'}
-		size="xs"
+		size="md"
+		p={0}
 		{...remainingProps}
 	>
-		{action === 'open' ? <GiHamburgerMenu /> : <HiXMark />}
+		{action === 'open' ? <HiBars3 /> : <HiXMark />}
 	</IconButton>
 )
 
@@ -49,7 +49,7 @@ const HomeNavBar: FC<DrawerRootProps> = (props) => {
 					zIndex="sticky"
 				/>
 			</Drawer.Trigger>
-			<Drawer.Backdrop />
+			<Drawer.Backdrop animationDuration="0.2" />
 			<Drawer.Positioner>
 				<Drawer.Content>
 					<Drawer.Body>
