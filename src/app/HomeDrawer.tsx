@@ -1,4 +1,3 @@
-import { useDialog } from '@ark-ui/react'
 import { FC } from 'react'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { HiXMark, HiArrowUp } from 'react-icons/hi2'
