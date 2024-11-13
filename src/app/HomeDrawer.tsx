@@ -30,9 +30,9 @@ const TriggerButton = ({
 )
 
 const headingIds = {
-	home: 'home',
-	celebration: 'celebration',
-	location: 'location',
+	home: 'inicio',
+	celebration: 'celebracion',
+	location: 'ubicacion',
 	info: 'info',
 }
 
