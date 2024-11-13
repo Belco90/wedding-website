@@ -2,7 +2,7 @@ import { PropsWithChildren } from 'react'
 import { FiHeart } from 'react-icons/fi'
 import { MdOutlineCelebration, MdOutlineTapas } from 'react-icons/md'
 
-import { headingIds, HomeDrawer } from '@/app/HomeDrawer'
+import { headingIds, HomeNavBar } from '@/app/HomeNavBar'
 import { InteractiveLogo } from '@/components/interactive-logo'
 import { LocationMap } from '@/components/location-map'
 import { Heading } from '@/components/ui/heading'
@@ -30,7 +30,7 @@ export default function HomePage() {
 		<main
 			className={css({ height: '100vh', pb: 'env(safe-area-inset-bottom)' })}
 		>
-			<HomeDrawer />
+			<HomeNavBar />
 			<Section h="80vh">
 				<VStack height="full" justifyContent="space-around">
 					<Heading

@@ -10,6 +10,7 @@ import type { RootProps as DrawerRootProps } from '@/components/ui/styled/drawer
 import type { ComponentProps } from '../../styled-system/types'
 
 import { css } from 'styled-system/css'
+import { Box, HStack } from 'styled-system/jsx'
 
 const TriggerButton = ({
 	action,
@@ -36,7 +37,7 @@ const headingIds = {
 	info: 'info',
 }
 
-const HomeDrawer: FC<DrawerRootProps> = (props) => {
+const HomeNavBar: FC<DrawerRootProps> = (props) => {
 	return (
 		<Drawer.Root {...props}>
 			<Drawer.Trigger asChild>
@@ -59,10 +60,11 @@ const HomeDrawer: FC<DrawerRootProps> = (props) => {
 								flexDir: 'column',
 								gap: '4',
 								px: '4',
-								justifyContent: 'center',
+								justifyContent: 'flex-end',
 								fontWeight: 'bold',
 								'& a': {
 									textDecoration: 'none',
+									fontSize: 'xl',
 								},
 							})}
 						>
@@ -95,9 +97,12 @@ const HomeDrawer: FC<DrawerRootProps> = (props) => {
 					</Drawer.Body>
 
 					<Drawer.Footer>
-						<Drawer.CloseTrigger asChild>
-							<TriggerButton action="close" />
-						</Drawer.CloseTrigger>
+						<HStack justifyContent="space-between" w="full">
+							<Box fontWeight="bold">Menú</Box>
+							<Drawer.CloseTrigger asChild>
+								<TriggerButton action="close" />
+							</Drawer.CloseTrigger>
+						</HStack>
 					</Drawer.Footer>
 				</Drawer.Content>
 			</Drawer.Positioner>
@@ -105,4 +110,4 @@ const HomeDrawer: FC<DrawerRootProps> = (props) => {
 	)
 }
 
-export { HomeDrawer, headingIds }
+export { HomeNavBar, headingIds }
