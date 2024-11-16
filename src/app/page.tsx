@@ -27,9 +27,7 @@ const planningLiCss = css({
 
 export default function HomePage() {
 	return (
-		<main
-			className={css({ height: '100vh', pb: 'env(safe-area-inset-bottom)' })}
-		>
+		<main className={css({ height: '100vh' })}>
 			<HomeNavBar />
 			<Section h="80vh">
 				<VStack height="full" justifyContent="space-around">
