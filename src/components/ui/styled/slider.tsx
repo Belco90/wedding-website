@@ -1,11 +1,9 @@
 'use client'
 import type { Assign } from '@ark-ui/react'
 import { Slider } from '@ark-ui/react/slider'
-
-import { createStyleContext } from './utils/create-style-context'
-
 import { type SliderVariantProps, slider } from 'styled-system/recipes'
 import type { ComponentProps, HTMLStyledProps } from 'styled-system/types'
+import { createStyleContext } from './utils/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(slider)
 

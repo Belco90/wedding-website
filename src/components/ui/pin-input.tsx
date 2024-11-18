@@ -1,5 +1,4 @@
 import { forwardRef } from 'react'
-
 import { Input } from './input'
 import * as StyledPinInput from './styled/pin-input'
 

@@ -1,11 +1,9 @@
 'use client'
 import type { Assign, PolymorphicProps } from '@ark-ui/react'
 import { ark } from '@ark-ui/react/factory'
-
-import { createStyleContext } from './utils/create-style-context'
-
 import { alert } from 'styled-system/recipes'
 import type { ComponentProps, HTMLStyledProps } from 'styled-system/types'
+import { createStyleContext } from './utils/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(alert)
 

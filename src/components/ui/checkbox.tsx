@@ -1,5 +1,4 @@
 import { forwardRef } from 'react'
-
 import * as StyledCheckbox from './styled/checkbox'
 
 export interface CheckboxProps extends StyledCheckbox.RootProps {}

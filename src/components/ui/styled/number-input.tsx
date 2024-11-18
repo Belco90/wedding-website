@@ -1,14 +1,12 @@
 'use client'
 import type { Assign } from '@ark-ui/react'
 import { NumberInput } from '@ark-ui/react/number-input'
-
-import { createStyleContext } from './utils/create-style-context'
-
 import {
 	type NumberInputVariantProps,
 	numberInput,
 } from 'styled-system/recipes'
 import type { ComponentProps, HTMLStyledProps } from 'styled-system/types'
+import { createStyleContext } from './utils/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(numberInput)
 

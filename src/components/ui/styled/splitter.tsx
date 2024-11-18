@@ -1,11 +1,9 @@
 'use client'
 import type { Assign } from '@ark-ui/react'
 import { Splitter } from '@ark-ui/react/splitter'
-
-import { createStyleContext } from './utils/create-style-context'
-
 import { type SplitterVariantProps, splitter } from 'styled-system/recipes'
 import type { ComponentProps, HTMLStyledProps } from 'styled-system/types'
+import { createStyleContext } from './utils/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(splitter)
 

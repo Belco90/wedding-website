@@ -1,5 +1,4 @@
 import { forwardRef } from 'react'
-
 import * as StyledNumberInput from './styled/number-input'
 
 export interface NumberInputProps extends StyledNumberInput.RootProps {}

@@ -1,6 +1,5 @@
 'use client'
 import { forwardRef } from 'react'
-
 import { Button } from './button'
 import { IconButton } from './icon-button'
 import * as StyledPagination from './styled/pagination'

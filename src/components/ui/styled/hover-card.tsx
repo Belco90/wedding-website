@@ -1,11 +1,9 @@
 'use client'
 import type { Assign } from '@ark-ui/react'
 import { HoverCard } from '@ark-ui/react/hover-card'
-
-import { createStyleContext } from './utils/create-style-context'
-
 import { type HoverCardVariantProps, hoverCard } from 'styled-system/recipes'
 import type { ComponentProps, HTMLStyledProps } from 'styled-system/types'
+import { createStyleContext } from './utils/create-style-context'
 
 const { withRootProvider, withContext } = createStyleContext(hoverCard)
 

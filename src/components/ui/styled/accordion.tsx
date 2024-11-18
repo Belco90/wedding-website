@@ -1,11 +1,9 @@
 'use client'
 import type { Assign } from '@ark-ui/react'
 import { Accordion } from '@ark-ui/react/accordion'
-
-import { createStyleContext } from './utils/create-style-context'
-
 import { type AccordionVariantProps, accordion } from 'styled-system/recipes'
 import type { ComponentProps, HTMLStyledProps } from 'styled-system/types'
+import { createStyleContext } from './utils/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(accordion)
 

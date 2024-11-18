@@ -1,14 +1,12 @@
 'use client'
 import type { Assign } from '@ark-ui/react'
 import { ColorPicker } from '@ark-ui/react/color-picker'
-
-import { createStyleContext } from './utils/create-style-context'
-
 import {
 	type ColorPickerVariantProps,
 	colorPicker,
 } from 'styled-system/recipes'
 import type { ComponentProps, HTMLStyledProps } from 'styled-system/types'
+import { createStyleContext } from './utils/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(colorPicker)
 

@@ -20,7 +20,7 @@ const TriggerButton = ({
 		variant="outline"
 		borderRadius="full"
 		shadow="lg"
-		bgColor="accent.1"
+		bgColor="colorPalette.1"
 		color="gray.11"
 		aria-label={action === 'open' ? 'Abrir menú' : 'Cerrar menú'}
 		size="md"
@@ -117,7 +117,7 @@ const HomeNavBar: FC<DrawerRootProps> = (props) => {
 				hideBelow="lg"
 				position="fixed"
 				right="0"
-				bgColor="accent.a2"
+				bgColor="colorPalette.a2"
 				h="full"
 			>
 				<ul

@@ -20,7 +20,7 @@ const Logo: FC = () => {
 			<Text
 				fontFamily="banner"
 				fontSize="6xl"
-				color="accent.a11"
+				color="colorPalette.a11"
 				textTransform="uppercase"
 			>
 				Marta
@@ -39,7 +39,7 @@ const Logo: FC = () => {
 			<Text
 				fontFamily="banner"
 				fontSize="6xl"
-				color="accent.a11"
+				color="colorPalette.a11"
 				textTransform="uppercase"
 			>
 				Mario

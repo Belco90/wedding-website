@@ -49,7 +49,7 @@ const InteractiveLogo: FC = () => {
 						height="full"
 						backfaceVisibility="hidden"
 						transform="rotateY(180deg)"
-						bgColor="accent.default"
+						bgColor="colorPalette.default"
 					>
 						<Image
 							src={couplePic}

@@ -1,11 +1,9 @@
 'use client'
 import type { Assign } from '@ark-ui/react'
 import { Clipboard } from '@ark-ui/react/clipboard'
-
-import { createStyleContext } from './utils/create-style-context'
-
 import { type ClipboardVariantProps, clipboard } from 'styled-system/recipes'
 import type { ComponentProps, HTMLStyledProps } from 'styled-system/types'
+import { createStyleContext } from './utils/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(clipboard)
 

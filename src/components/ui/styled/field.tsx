@@ -1,9 +1,6 @@
 'use client'
 import type { Assign } from '@ark-ui/react'
 import { Field } from '@ark-ui/react/field'
-
-import { createStyleContext } from './utils/create-style-context'
-
 import { styled } from 'styled-system/jsx'
 import {
 	type FieldVariantProps,
@@ -12,6 +9,7 @@ import {
 	textarea,
 } from 'styled-system/recipes'
 import type { ComponentProps, HTMLStyledProps } from 'styled-system/types'
+import { createStyleContext } from './utils/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(field)
 

@@ -1,14 +1,12 @@
 'use client'
 import type { Assign } from '@ark-ui/react'
 import { SegmentGroup } from '@ark-ui/react/segment-group'
-
-import { createStyleContext } from './utils/create-style-context'
-
 import {
 	type SegmentGroupVariantProps,
 	segmentGroup,
 } from 'styled-system/recipes'
 import type { ComponentProps, HTMLStyledProps } from 'styled-system/types'
+import { createStyleContext } from './utils/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(segmentGroup)
 

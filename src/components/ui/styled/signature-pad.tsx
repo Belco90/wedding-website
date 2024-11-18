@@ -1,14 +1,12 @@
 'use client'
 import type { Assign } from '@ark-ui/react'
 import { SignaturePad } from '@ark-ui/react/signature-pad'
-
-import { createStyleContext } from './utils/create-style-context'
-
 import {
 	type SignaturePadVariantProps,
 	signaturePad,
 } from 'styled-system/recipes'
 import type { ComponentProps, HTMLStyledProps } from 'styled-system/types'
+import { createStyleContext } from './utils/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(signaturePad)
 

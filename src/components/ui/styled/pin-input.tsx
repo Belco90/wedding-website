@@ -1,11 +1,9 @@
 'use client'
 import type { Assign } from '@ark-ui/react'
 import { PinInput } from '@ark-ui/react/pin-input'
-
-import { createStyleContext } from './utils/create-style-context'
-
 import { type PinInputVariantProps, pinInput } from 'styled-system/recipes'
 import type { ComponentProps, HTMLStyledProps } from 'styled-system/types'
+import { createStyleContext } from './utils/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(pinInput)
 

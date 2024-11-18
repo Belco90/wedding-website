@@ -1,16 +1,18 @@
 import { defineConfig } from '@pandacss/dev'
 import { createPreset } from '@park-ui/panda-preset'
+import amber from '@park-ui/panda-preset/colors/amber'
+import lime from '@park-ui/panda-preset/colors/lime'
+import olive from '@park-ui/panda-preset/colors/olive'
 
 const customPreset = createPreset({
-	accentColor: 'lime',
-	grayColor: 'olive',
-	borderRadius: 'sm',
-	additionalColors: ['*'],
+	accentColor: lime,
+	grayColor: olive,
+	radius: 'sm',
 })
 
 export default defineConfig({
 	preflight: true,
-	presets: ['@pandacss/preset-base', customPreset],
+	presets: [customPreset],
 	include: [
 		'./src/components/**/*.{ts,tsx,js,jsx}',
 		'./src/app/**/*.{ts,tsx,js,jsx}',
@@ -18,18 +20,29 @@ export default defineConfig({
 	theme: {
 		extend: {
 			tokens: {
+				colors: {
+					amber: amber.tokens,
+				},
 				fonts: {
 					body: { value: 'var(--font-outfit)' },
 					heading: { value: 'var(--font-merienda)' },
 					banner: { value: 'var(--font-exo)' },
 				},
 			},
+			semanticTokens: {
+				colors: {
+					amber: amber.semanticTokens,
+				},
+			},
 			recipes: {
 				link: {
 					base: {
-						color: 'accent.text',
+						color: 'colorPalette.text',
 						textDecoration: 'underline',
-						_hover: { color: 'accent.12', textDecorationColor: 'accent.12' },
+						_hover: {
+							color: 'colorPalette.12',
+							textDecorationColor: 'colorPalette.12',
+						},
 					},
 				},
 			},

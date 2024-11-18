@@ -1,5 +1,4 @@
 import { forwardRef } from 'react'
-
 import * as StyledAvatar from './styled/avatar'
 
 export interface AvatarProps extends StyledAvatar.RootProps {

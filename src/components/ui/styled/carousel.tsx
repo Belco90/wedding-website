@@ -1,11 +1,9 @@
 'use client'
 import type { Assign } from '@ark-ui/react'
 import { Carousel } from '@ark-ui/react/carousel'
-
-import { createStyleContext } from './utils/create-style-context'
-
 import { type CarouselVariantProps, carousel } from 'styled-system/recipes'
 import type { ComponentProps, HTMLStyledProps } from 'styled-system/types'
+import { createStyleContext } from './utils/create-style-context'
 
 const { withProvider, withContext } = createStyleContext(carousel)
 

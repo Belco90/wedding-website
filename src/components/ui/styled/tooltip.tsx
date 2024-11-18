@@ -1,11 +1,9 @@
 'use client'
 import type { Assign } from '@ark-ui/react'
 import { Tooltip } from '@ark-ui/react/tooltip'
-
-import { createStyleContext } from './utils/create-style-context'
-
 import { type TooltipVariantProps, tooltip } from 'styled-system/recipes'
 import type { ComponentProps, HTMLStyledProps } from 'styled-system/types'
+import { createStyleContext } from './utils/create-style-context'
 
 const { withRootProvider, withContext } = createStyleContext(tooltip)
 
