@@ -163,6 +163,19 @@ export default function HomePage() {
 					</VStack>
 				</Section>
 			</Box>
+
+			{/* Footer */}
+			<Box
+				bgColor="colorPalette.7"
+				color="fg.default"
+				fontWeight="bold"
+				fontSize={{ base: 'sm', xl: 'xl' }}
+				px={{ base: '2', xl: '8' }}
+				py="4"
+				textAlign="center"
+			>
+				¡Muchas gracias por acompañarnos!
+			</Box>
 		</main>
 	)
 }
