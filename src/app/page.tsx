@@ -29,8 +29,8 @@ export default function HomePage() {
 	return (
 		<main className={css({ height: '100vh' })}>
 			<HomeNavBar />
-			<Section h="80vh">
-				<VStack height="full" justifyContent="space-around">
+			<Section>
+				<VStack height="full" justifyContent="space-around" gap={12}>
 					<Heading
 						id={headingIds.home}
 						as="h1"
