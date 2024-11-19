@@ -73,23 +73,21 @@ export default function HomePage() {
 							ceremonia y la celebración tendrán lugar en Jardines de San Telmo.
 							Se ruega a los invitados llegar sobre las 12:30.
 						</Text>
-						<Box>
-							<Text>La planificación del evento es la siguiente:</Text>
-							<ul>
-								<li className={planningLiCss}>
-									<FiHeart />
-									<span>12:30 - Bienvenida y ceremonia</span>
-								</li>
-								<li className={planningLiCss}>
-									<MdOutlineTapas />
-									<span>14:00 - Cóctel y comida</span>
-								</li>
-								<li className={planningLiCss}>
-									<MdOutlineCelebration />
-									<span>18:00 - Fiesta</span>
-								</li>
-							</ul>
-						</Box>
+						<Text>La planificación del evento es la siguiente:</Text>
+						<ul>
+							<li className={planningLiCss}>
+								<FiHeart />
+								<span>12:30 - Bienvenida y ceremonia</span>
+							</li>
+							<li className={planningLiCss}>
+								<MdOutlineTapas />
+								<span>14:00 - Cóctel y comida</span>
+							</li>
+							<li className={planningLiCss}>
+								<MdOutlineCelebration />
+								<span>18:00 - Fiesta</span>
+							</li>
+						</ul>
 					</VStack>
 				</Section>
 			</Box>
@@ -136,37 +134,36 @@ export default function HomePage() {
 						>
 							Otra información
 						</Heading>
-						<ul
-							className={css({
-								listStyleType: 'disc',
-								listStylePosition: 'inside',
-							})}
-						>
-							<li>
-								<strong>Código de vestimenta.</strong> ¡No hay ningún protocolo!
-								Viste como te apetezca, serás bienvenido igualmente.
-							</li>
-							<li>
-								<strong>Fecha de confirmación.</strong> Se ruega confirmación
-								antes del 4 de diciembre.
-							</li>
-							<li>
-								<strong>Regalo.</strong> El regalo es opcional, la asistencia
-								obligatoria. Pero si queréis tener un detalle con nosotros,
-								podéis hacerlo a través de Bizum (en nuestros números de móvil
-								habituales), o en el siguiente número de cuenta: <br />
-								ES20 1465 0100 94 1746596946
-							</li>
-						</ul>
-
-						<Text>¡Muchas gracias por acompañarnos!</Text>
+						<VStack alignItems="flex-start" gap={4}>
+							<Box>
+								<Heading as="h3">Código de vestimenta</Heading>
+								<Text>
+									¡No hay ningún protocolo! Viste como te apetezca, serás
+									bienvenido igualmente.
+								</Text>
+							</Box>
+							<Box>
+								<Heading as="h3">Fecha de confirmación</Heading>{' '}
+								<Text>Se ruega confirmación antes del 4 de diciembre.</Text>
+							</Box>
+							<Box>
+								<Heading as="h3">Regalo</Heading>{' '}
+								<Text>
+									El regalo es opcional, la asistencia obligatoria. Pero si
+									queréis tener un detalle con nosotros, podéis hacerlo a través
+									de Bizum (en nuestros números de móvil habituales), o en el
+									siguiente número de cuenta: <br />
+									ES20 1465 0100 94 1746596946
+								</Text>
+							</Box>
+						</VStack>
 					</VStack>
 				</Section>
 			</Box>
 
 			{/* Footer */}
 			<Box
-				bgColor="colorPalette.7"
+				bgColor="colorPalette.5"
 				color="fg.default"
 				fontWeight="bold"
 				fontSize={{ base: 'sm', xl: 'xl' }}
