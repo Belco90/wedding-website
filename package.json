@@ -3,11 +3,11 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"prepare": "panda codegen",
+		"prepare": "panda codegen && husky",
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"park-components": "pnpx @park-ui/cli components",
+		"park-components": "park-ui components",
 		"lint": "next lint",
 		"lint:fix": "pnpm lint --fix",
 		"type-check": "tsc --noEmit",
@@ -35,6 +35,7 @@
 		"eslint": "^8",
 		"eslint-config-next": "15.0.3",
 		"eslint-config-prettier": "^9.1.0",
+		"husky": "^9.1.7",
 		"prettier": "3.3.3",
 		"typescript": "^5.6.3"
 	},
