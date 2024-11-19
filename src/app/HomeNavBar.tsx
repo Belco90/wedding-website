@@ -128,7 +128,7 @@ const HomeNavBar: FC<DrawerRootProps> = (props) => {
 						gap: '4',
 						px: { base: '2', xl: '8' },
 						py: '8',
-						justifyContent: 'flex-end',
+						justifyContent: 'start',
 						fontWeight: 'bold',
 						fontSize: { base: 'md', xl: 'xl' },
 						'& a': {
