@@ -14,7 +14,7 @@
 		"format": "prettier --write --ignore-unknown src \"*.{json,js,md,mjs}\""
 	},
 	"engines": {
-		"node": "20",
+		"node": "22",
 		"pnpm": "^9.15.0"
 	},
 	"packageManager": "pnpm@9.15.0",
@@ -29,7 +29,7 @@
 		"@pandacss/dev": "^0.48.0",
 		"@park-ui/cli": "^0.9.0",
 		"@park-ui/panda-preset": "^0.43.0",
-		"@types/node": "^20",
+		"@types/node": "^22.10.1",
 		"@types/react": "npm:types-react@19.0.0-rc.1",
 		"@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
 		"eslint": "^8",
