@@ -1,5 +1,8 @@
+'use client'
+
+import { usePathname, useRouter } from 'next/navigation'
 import type { FC, ReactNode, ComponentProps } from 'react'
-import { HiXMark, HiArrowUp, HiBars3 } from 'react-icons/hi2'
+import { HiXMark, HiArrowUp, HiBars3, HiHome } from 'react-icons/hi2'
 
 import { Drawer } from '@/components/ui/drawer'
 import { IconButton } from '@/components/ui/icon-button'
@@ -7,35 +10,39 @@ import { Link } from '@/components/ui/link'
 import type { RootProps as DrawerRootProps } from '@/components/ui/styled/drawer'
 import { Text } from '@/components/ui/text'
 
+import { headingIds } from './sections'
+
 import { css } from 'styled-system/css'
 import { Box, HStack } from 'styled-system/jsx'
 
-const TriggerButton = ({
-	action,
-	...remainingProps
-}: ComponentProps<typeof IconButton> & { action: 'open' | 'close' }) => (
+type TriggerButtonProps = ComponentProps<typeof IconButton> & {
+	action: 'open' | 'close' | 'home'
+}
+
+const actionProperties: Record<
+	TriggerButtonProps['action'],
+	{ label: string; icon: ReactNode }
+> = {
+	open: { label: 'Abrir menú', icon: <HiBars3 /> },
+	close: { label: 'Cerrar menú', icon: <HiXMark /> },
+	home: { label: 'Volver al inicio', icon: <HiHome /> },
+}
+
+const TriggerButton = ({ action, ...remainingProps }: TriggerButtonProps) => (
 	<IconButton
 		variant="outline"
 		borderRadius="full"
 		shadow="lg"
 		bgColor="colorPalette.1"
 		color="gray.11"
-		aria-label={action === 'open' ? 'Abrir menú' : 'Cerrar menú'}
+		aria-label={actionProperties[action].label}
 		size="md"
 		p={0}
 		{...remainingProps}
 	>
-		{action === 'open' ? <HiBars3 /> : <HiXMark />}
+		{actionProperties[action].icon}
 	</IconButton>
 )
-
-const headingIds = {
-	home: 'inicio',
-	celebration: 'celebracion',
-	location: 'ubicacion',
-	info: 'info',
-	guide: 'guia',
-}
 
 const headingListItems: Record<
 	keyof typeof headingIds,
@@ -45,22 +52,33 @@ const headingListItems: Record<
 	celebration: { text: 'Ceremonia y celebración' },
 	location: { text: 'Cómo llegar' },
 	info: { text: 'Otra información' },
-	guide: { text: 'Guía de Málaga' },
+	city: { text: 'Sobre Málaga' },
 }
 
 const HomeNavBar: FC<DrawerRootProps> = (props) => {
+	const router = useRouter()
+	const pathname = usePathname()
+	const isHomepage = pathname === '/'
+
+	const handleTriggerClick = () => {
+		if (!isHomepage) {
+			router.push('/')
+		}
+	}
+
 	return (
 		<>
 			{/* Mobile navbar */}
-			<Drawer.Root {...props}>
+			<Drawer.Root {...props} open={isHomepage ? undefined : false}>
 				<Drawer.Trigger asChild>
 					<TriggerButton
-						action="open"
+						action={isHomepage ? 'open' : 'home'}
 						position="fixed"
 						bottom="4"
 						right="4"
 						zIndex="overlay"
 						hideFrom="lg"
+						onClick={handleTriggerClick}
 					/>
 				</Drawer.Trigger>
 				<Drawer.Backdrop animationDuration="0.2" />
@@ -102,7 +120,7 @@ const HomeNavBar: FC<DrawerRootProps> = (props) => {
 							<HStack justifyContent="space-between" w="full">
 								<Box fontWeight="bold">Menú</Box>
 								<Drawer.CloseTrigger asChild>
-									<TriggerButton action="close" />
+									<TriggerButton action={isHomepage ? 'close' : 'home'} />
 								</Drawer.CloseTrigger>
 							</HStack>
 						</Drawer.Footer>
@@ -152,4 +170,4 @@ const HomeNavBar: FC<DrawerRootProps> = (props) => {
 	)
 }
 
-export { HomeNavBar, headingIds }
+export { HomeNavBar }

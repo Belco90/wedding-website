@@ -3,12 +3,13 @@ import { PropsWithChildren } from 'react'
 import { FiHeart } from 'react-icons/fi'
 import { MdOutlineCelebration, MdOutlineTapas } from 'react-icons/md'
 
-import { headingIds } from '@/app/HomeNavBar'
 import { InteractiveLogo } from '@/components/interactive-logo'
 import { LocationMap } from '@/components/location-map'
 import { Heading } from '@/components/ui/heading'
 import { Link } from '@/components/ui/link'
 import { Text } from '@/components/ui/text'
+
+import { headingIds } from './sections'
 
 import { css } from 'styled-system/css'
 import type { ContainerProps } from 'styled-system/jsx'
@@ -27,6 +28,7 @@ const planningLiCss = css({
 })
 
 export default function HomePage() {
+	console.log('home id', headingIds.home)
 	return (
 		<div
 			className={css({
@@ -169,12 +171,12 @@ export default function HomePage() {
 				<Section>
 					<VStack alignItems="flex-start">
 						<Heading
-							id={headingIds.guide}
+							id={headingIds.city}
 							as="h2"
 							size="2xl"
 							fontFamily="heading"
 						>
-							Guía de Málaga
+							Sobre Málaga
 						</Heading>
 						<Text>
 							Hemos preparado una pequeña guía de recomendaciones de Málaga para
