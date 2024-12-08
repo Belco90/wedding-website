@@ -1,3 +1,4 @@
+import NextLink from 'next/link'
 import { PropsWithChildren } from 'react'
 import { FiHeart } from 'react-icons/fi'
 import { MdOutlineCelebration, MdOutlineTapas } from 'react-icons/md'
@@ -143,11 +144,11 @@ export default function HomePage() {
 								</Text>
 							</Box>
 							<Box>
-								<Heading as="h3">Fecha de confirmación</Heading>{' '}
+								<Heading as="h3">Fecha de confirmación</Heading>
 								<Text>Se ruega confirmación antes del 4 de diciembre.</Text>
 							</Box>
 							<Box>
-								<Heading as="h3">Regalo</Heading>{' '}
+								<Heading as="h3">Regalo</Heading>
 								<Text>
 									El regalo es opcional, la asistencia obligatoria. Pero si
 									queréis tener un detalle con nosotros, podéis hacerlo a través
@@ -157,6 +158,29 @@ export default function HomePage() {
 								</Text>
 							</Box>
 						</VStack>
+					</VStack>
+				</Section>
+			</Box>
+
+			<Box>
+				<Section>
+					<VStack alignItems="flex-start">
+						<Heading
+							id={headingIds.guide}
+							as="h2"
+							size="2xl"
+							fontFamily="heading"
+						>
+							Guía de Málaga
+						</Heading>
+						<Text>
+							Hemos preparado una pequeña guía de recomendaciones de Málaga para
+							aquellos que venís desde fuera.{' '}
+							<Link asChild>
+								<NextLink href="/guia-malaga">Podéis verla aquí</NextLink>
+							</Link>
+							.
+						</Text>
 					</VStack>
 				</Section>
 			</Box>

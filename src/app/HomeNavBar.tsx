@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import type { FC, ReactNode, ComponentProps } from 'react'
 import { HiXMark, HiArrowUp, HiBars3 } from 'react-icons/hi2'
 
 import { Drawer } from '@/components/ui/drawer'
@@ -6,8 +6,6 @@ import { IconButton } from '@/components/ui/icon-button'
 import { Link } from '@/components/ui/link'
 import type { RootProps as DrawerRootProps } from '@/components/ui/styled/drawer'
 import { Text } from '@/components/ui/text'
-
-import type { ComponentProps } from '../../styled-system/types'
 
 import { css } from 'styled-system/css'
 import { Box, HStack } from 'styled-system/jsx'
@@ -36,6 +34,18 @@ const headingIds = {
 	celebration: 'celebracion',
 	location: 'ubicacion',
 	info: 'info',
+	guide: 'guia',
+}
+
+const headingListItems: Record<
+	keyof typeof headingIds,
+	{ text: string; icon?: ReactNode }
+> = {
+	home: { text: 'Volver arriba', icon: <HiArrowUp /> },
+	celebration: { text: 'Ceremonia y celebración' },
+	location: { text: 'Cómo llegar' },
+	info: { text: 'Otra información' },
+	guide: { text: 'Guía de Málaga' },
 }
 
 const HomeNavBar: FC<DrawerRootProps> = (props) => {
@@ -72,31 +82,19 @@ const HomeNavBar: FC<DrawerRootProps> = (props) => {
 									},
 								})}
 							>
-								<li>
-									<Drawer.Trigger asChild>
-										<Link href={`#${headingIds.home}`}>
-											Volver arriba
-											<HiArrowUp />
-										</Link>
-									</Drawer.Trigger>
-								</li>
-								<li>
-									<Drawer.Trigger asChild>
-										<Link href={`#${headingIds.celebration}`}>
-											Ceremonia y celebración
-										</Link>
-									</Drawer.Trigger>
-								</li>
-								<li>
-									<Drawer.Trigger asChild>
-										<Link href={`#${headingIds.location}`}>Cómo llegar</Link>
-									</Drawer.Trigger>
-								</li>
-								<li>
-									<Drawer.Trigger asChild>
-										<Link href={`#${headingIds.info}`}>Otra información</Link>
-									</Drawer.Trigger>
-								</li>
+								{Object.entries(headingIds).map(([key, value]) => {
+									const headingKey = key as keyof typeof headingIds
+									return (
+										<li key={headingKey}>
+											<Drawer.Trigger asChild>
+												<Link href={`#${value}`}>
+													<Text>{headingListItems[headingKey].text}</Text>{' '}
+													{headingListItems[headingKey].icon}
+												</Link>
+											</Drawer.Trigger>
+										</li>
+									)
+								})}
 							</ul>
 						</Drawer.Body>
 
@@ -136,26 +134,17 @@ const HomeNavBar: FC<DrawerRootProps> = (props) => {
 						},
 					})}
 				>
-					<li>
-						<Text>Menú</Text>
-					</li>
-					<li>
-						<Link href={`#${headingIds.home}`}>
-							Volver arriba
-							<HiArrowUp />
-						</Link>
-					</li>
-					<li>
-						<Link href={`#${headingIds.celebration}`}>
-							Ceremonia y celebración
-						</Link>
-					</li>
-					<li>
-						<Link href={`#${headingIds.location}`}>Cómo llegar</Link>
-					</li>
-					<li>
-						<Link href={`#${headingIds.info}`}>Otra información</Link>
-					</li>
+					{Object.entries(headingIds).map(([key, value]) => {
+						const headingKey = key as keyof typeof headingIds
+						return (
+							<li key={headingKey}>
+								<Link href={`#${value}`}>
+									<Text>{headingListItems[headingKey].text}</Text>{' '}
+									{headingListItems[headingKey].icon}
+								</Link>
+							</li>
+						)
+					})}
 				</ul>
 			</Box>
 		</>
