@@ -1,4 +1,4 @@
-import { defineConfig } from '@pandacss/dev'
+import { defineConfig, defineGlobalStyles } from '@pandacss/dev'
 import { createPreset } from '@park-ui/panda-preset'
 import amber from '@park-ui/panda-preset/colors/amber'
 import lime from '@park-ui/panda-preset/colors/lime'
@@ -10,6 +10,19 @@ const customPreset = createPreset({
 	radius: 'sm',
 })
 
+const globalCss = defineGlobalStyles({
+	// Custom Notion styles
+	'.notion-title, .notion-h-title': {
+		fontFamily: 'heading !important',
+	},
+	'.notion': {
+		fontFamily: 'body !important',
+	},
+	'.notion-link': {
+		color: 'colorPalette.text !important',
+	},
+})
+
 export default defineConfig({
 	preflight: true,
 	presets: [customPreset],
@@ -17,6 +30,7 @@ export default defineConfig({
 		'./src/components/**/*.{ts,tsx,js,jsx}',
 		'./src/app/**/*.{ts,tsx,js,jsx}',
 	],
+	globalCss,
 	theme: {
 		extend: {
 			tokens: {

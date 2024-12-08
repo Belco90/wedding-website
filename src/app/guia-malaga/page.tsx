@@ -1,4 +1,6 @@
 import 'react-notion-x/src/styles.css'
+import NextImage from 'next/image'
+import NextLink from 'next/link'
 
 import { notionApi } from '@/notionApi'
 
@@ -12,13 +14,15 @@ export default async function GuidePage() {
 	const notionPage = await notionApi.getPage(notionPageId)
 
 	return (
-		<main>
-			<NotionClientRenderer
-				recordMap={notionPage}
-				fullPage
-				darkMode={false}
-				disableHeader
-			/>
-		</main>
+		<NotionClientRenderer
+			recordMap={notionPage}
+			fullPage
+			disableHeader
+			darkMode={false}
+			components={{
+				nextImage: NextImage,
+				nextLink: NextLink,
+			}}
+		/>
 	)
 }
