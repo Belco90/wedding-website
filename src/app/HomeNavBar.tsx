@@ -59,7 +59,7 @@ const HomeNavBar: FC<DrawerRootProps> = (props) => {
 						position="fixed"
 						bottom="4"
 						right="4"
-						zIndex="sticky"
+						zIndex="overlay"
 						hideFrom="lg"
 					/>
 				</Drawer.Trigger>
@@ -117,6 +117,7 @@ const HomeNavBar: FC<DrawerRootProps> = (props) => {
 				right="0"
 				bgColor="colorPalette.a2"
 				h="full"
+				pt={{ base: '4', xl: '10' }}
 			>
 				<ul
 					className={css({

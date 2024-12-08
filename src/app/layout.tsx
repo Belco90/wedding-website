@@ -1,10 +1,12 @@
 import './index.css'
 import type { Metadata } from 'next'
 import { Merienda, Outfit, Exo } from 'next/font/google'
+import NextLink from 'next/link'
 import { PropsWithChildren } from 'react'
 
 import { HomeNavBar } from '@/app/HomeNavBar'
 import { DEFAULT_TITLE, openGraph } from '@/app/base-metadata'
+import { Text } from '@/components/ui/text'
 
 import { css } from 'styled-system/css'
 import { Box, Flex } from 'styled-system/jsx'
@@ -41,9 +43,31 @@ export default function RootLayout({ children }: PropsWithChildren) {
 			className={`${meriendaFont.variable} ${outfitFont.variable} ${exoFont.variable}`}
 		>
 			<body suppressHydrationWarning>
-				<HomeNavBar />
 				<Flex h="100vh" direction="column">
-					{/* TODO: Header */}
+					<HomeNavBar />
+
+					{/* Header */}
+					<Box
+						bgColor="colorPalette.4"
+						color="fg.default"
+						fontWeight="bold"
+						fontSize={{ base: 'sm', xl: 'xl' }}
+						px={{ base: '2', xl: '8' }}
+						py="2"
+						textAlign="center"
+						zIndex="banner"
+					>
+						<NextLink href="/">
+							<Text as="span" fontFamily="heading">
+								M
+							</Text>
+							<Text as="span">&</Text>
+							<Text as="span" fontFamily="heading">
+								M
+							</Text>
+						</NextLink>
+					</Box>
+
 					<main
 						className={css({
 							flex: '1 0 auto',
@@ -54,13 +78,14 @@ export default function RootLayout({ children }: PropsWithChildren) {
 
 					{/* Footer */}
 					<Box
-						bgColor="colorPalette.5"
+						bgColor="colorPalette.4"
 						color="fg.default"
 						fontWeight="bold"
 						fontSize={{ base: 'sm', xl: 'xl' }}
 						px={{ base: '2', xl: '8' }}
-						py="4"
+						py="2"
 						textAlign="center"
+						zIndex="banner"
 					>
 						¡Muchas gracias por acompañarnos!
 					</Box>
