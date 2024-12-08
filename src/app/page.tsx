@@ -3,7 +3,7 @@ import { PropsWithChildren } from 'react'
 import { FiHeart } from 'react-icons/fi'
 import { MdOutlineCelebration, MdOutlineTapas } from 'react-icons/md'
 
-import { headingIds, HomeNavBar } from '@/app/HomeNavBar'
+import { headingIds } from '@/app/HomeNavBar'
 import { InteractiveLogo } from '@/components/interactive-logo'
 import { LocationMap } from '@/components/location-map'
 import { Heading } from '@/components/ui/heading'
@@ -28,8 +28,11 @@ const planningLiCss = css({
 
 export default function HomePage() {
 	return (
-		<main className={css({ height: '100vh' })}>
-			<HomeNavBar />
+		<div
+			className={css({
+				'& >:nth-child(even)': { bgColor: 'bg.muted' },
+			})}
+		>
 			<Section>
 				<VStack height="full" justifyContent="space-around" gap={12}>
 					<Heading
@@ -58,7 +61,7 @@ export default function HomePage() {
 				</VStack>
 			</Section>
 
-			<Box bgColor="bg.muted">
+			<Box>
 				<Section>
 					<VStack alignItems="flex-start">
 						<Heading
@@ -124,7 +127,7 @@ export default function HomePage() {
 				</Section>
 			</Box>
 
-			<Box bgColor="bg.muted">
+			<Box>
 				<Section>
 					<VStack alignItems="flex-start">
 						<Heading
@@ -184,19 +187,6 @@ export default function HomePage() {
 					</VStack>
 				</Section>
 			</Box>
-
-			{/* Footer */}
-			<Box
-				bgColor="colorPalette.5"
-				color="fg.default"
-				fontWeight="bold"
-				fontSize={{ base: 'sm', xl: 'xl' }}
-				px={{ base: '2', xl: '8' }}
-				py="4"
-				textAlign="center"
-			>
-				¡Muchas gracias por acompañarnos!
-			</Box>
-		</main>
+		</div>
 	)
 }
