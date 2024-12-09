@@ -9,6 +9,7 @@ import { Heading } from '@/components/ui/heading'
 import { Link } from '@/components/ui/link'
 import { Text } from '@/components/ui/text'
 
+import { Weather } from './Weather'
 import { headingIds } from './sections'
 
 import { css } from 'styled-system/css'
@@ -185,6 +186,10 @@ export default function HomePage() {
 							</Link>
 							.
 						</Text>
+						<Text>
+							La predicción del tiempo para los próximos días es la siguiente:
+						</Text>
+						<Weather />
 					</VStack>
 				</Section>
 			</Box>
