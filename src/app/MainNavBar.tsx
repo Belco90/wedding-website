@@ -134,11 +134,14 @@ const MainNavBar: FC<DrawerRootProps> = (props) => {
 			<Box
 				hideBelow="lg"
 				position="fixed"
-				right="0"
-				bgColor="colorPalette.a2"
-				h="full"
-				pt={{ base: '4', xl: '10' }}
+				right="4"
+				bottom="4"
 				visibility={isHomepage ? 'visible' : 'hidden'}
+				border="solid 1px"
+				borderColor="colorPalette.a4"
+				backgroundColor="bg.subtle"
+				rounded="xl"
+				zIndex="overlay"
 			>
 				<ul
 					className={css({
@@ -146,8 +149,8 @@ const MainNavBar: FC<DrawerRootProps> = (props) => {
 						display: 'flex',
 						flexDir: 'column',
 						gap: '4',
-						px: { base: '2', xl: '8' },
-						py: '8',
+						px: { base: '2', xl: '6' },
+						py: '6',
 						justifyContent: 'start',
 						fontWeight: 'bold',
 						fontSize: { base: 'md', xl: 'xl' },
