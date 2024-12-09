@@ -58,9 +58,14 @@ export default function RootLayout({ children }: PropsWithChildren) {
 						fontWeight="bold"
 						fontSize={{ base: 'sm', xl: 'xl' }}
 						px={{ base: '2', xl: '8' }}
-						py="2"
+						py={{ base: '1', xl: '2' }}
 						textAlign="center"
 						zIndex="banner"
+						shadow="xs"
+						position="fixed"
+						left="0"
+						right="0"
+						top="0"
 					>
 						<NextLink href="/">
 							<Text as="span" fontFamily="heading">
