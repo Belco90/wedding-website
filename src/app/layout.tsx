@@ -1,5 +1,5 @@
 import './index.css'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Merienda, Outfit, Exo } from 'next/font/google'
 import NextLink from 'next/link'
 import { PropsWithChildren } from 'react'
@@ -33,6 +33,11 @@ export const metadata: Metadata = {
 	},
 	description: '¡Nos casamos!',
 	openGraph: { ...openGraph },
+}
+
+export const viewport: Viewport = {
+	colorScheme: 'light',
+	themeColor: '#e2f0bd',
 }
 
 export default function RootLayout({ children }: PropsWithChildren) {
