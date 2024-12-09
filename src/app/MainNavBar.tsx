@@ -1,9 +1,11 @@
 'use client'
 
+import NextLink from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import type { FC, ReactNode, ComponentProps } from 'react'
 import { HiXMark, HiArrowUp, HiBars3, HiHome } from 'react-icons/hi2'
 
+import { Button } from '@/components/ui/button'
 import { Drawer } from '@/components/ui/drawer'
 import { IconButton } from '@/components/ui/icon-button'
 import { Link } from '@/components/ui/link'
@@ -30,11 +32,11 @@ const actionProperties: Record<
 
 const TriggerButton = ({ action, ...remainingProps }: TriggerButtonProps) => (
 	<IconButton
-		variant="outline"
+		colorPalette="bg"
 		borderRadius="full"
-		shadow="lg"
-		bgColor="colorPalette.1"
-		color="gray.11"
+		border="solid 1px"
+		borderColor="colorPalette.a4"
+		shadow="xs"
 		aria-label={actionProperties[action].label}
 		size="md"
 		p={0}
@@ -55,7 +57,7 @@ const headingListItems: Record<
 	city: { text: 'Sobre Málaga' },
 }
 
-const HomeNavBar: FC<DrawerRootProps> = (props) => {
+const MainNavBar: FC<DrawerRootProps> = (props) => {
 	const router = useRouter()
 	const pathname = usePathname()
 	const isHomepage = pathname === '/'
@@ -136,6 +138,7 @@ const HomeNavBar: FC<DrawerRootProps> = (props) => {
 				bgColor="colorPalette.a2"
 				h="full"
 				pt={{ base: '4', xl: '10' }}
+				visibility={isHomepage ? 'visible' : 'hidden'}
 			>
 				<ul
 					className={css({
@@ -166,8 +169,32 @@ const HomeNavBar: FC<DrawerRootProps> = (props) => {
 					})}
 				</ul>
 			</Box>
+
+			{/* Desktop back home button */}
+			<Box
+				hideBelow="lg"
+				position="fixed"
+				bottom="4"
+				right="4"
+				visibility={isHomepage ? 'hidden' : 'visible'}
+				zIndex="overlay"
+			>
+				<Button
+					variant="outline"
+					rounded="full"
+					border="solid 1px"
+					borderColor="colorPalette.a4"
+					size={{ base: 'xs', xl: 'md' }}
+					shadow="xs"
+					asChild
+				>
+					<NextLink href="/">
+						<HiHome /> Volver al inicio
+					</NextLink>
+				</Button>
+			</Box>
 		</>
 	)
 }
 
-export { HomeNavBar }
+export { MainNavBar }
