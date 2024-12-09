@@ -2,13 +2,12 @@ import './index.css'
 import type { Metadata, Viewport } from 'next'
 import { Merienda, Outfit, Exo } from 'next/font/google'
 import NextLink from 'next/link'
-import { PropsWithChildren } from 'react'
+import type { PropsWithChildren } from 'react'
 
-import { HomeNavBar } from '@/app/HomeNavBar'
+import { MainNavBar } from '@/app/MainNavBar'
 import { DEFAULT_TITLE, openGraph } from '@/app/base-metadata'
 import { Text } from '@/components/ui/text'
 
-import { css } from 'styled-system/css'
 import { Box, Flex } from 'styled-system/jsx'
 
 const meriendaFont = Merienda({
@@ -40,6 +39,14 @@ export const viewport: Viewport = {
 	themeColor: '#e2f0bd',
 }
 
+const headerPaddingY = {
+	base: 1,
+	xl: 2,
+}
+const mainPaddingTop = Object.fromEntries(
+	Object.entries(headerPaddingY).map(([key, value]) => [key, value * 5]),
+)
+
 export default function RootLayout({ children }: PropsWithChildren) {
 	return (
 		<html
@@ -49,7 +56,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
 		>
 			<body suppressHydrationWarning>
 				<Flex h="100vh" direction="column">
-					<HomeNavBar />
+					<MainNavBar />
 
 					{/* Header */}
 					<Box
@@ -58,7 +65,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
 						fontWeight="bold"
 						fontSize={{ base: 'sm', xl: 'xl' }}
 						px={{ base: '2', xl: '8' }}
-						py={{ base: '1', xl: '2' }}
+						py={headerPaddingY}
 						textAlign="center"
 						zIndex="banner"
 						shadow="xs"
@@ -78,13 +85,9 @@ export default function RootLayout({ children }: PropsWithChildren) {
 						</NextLink>
 					</Box>
 
-					<main
-						className={css({
-							flex: '1 0 auto',
-						})}
-					>
-						{children}
-					</main>
+					<Box flex="1 0 auto" mt={mainPaddingTop}>
+						<main>{children}</main>
+					</Box>
 
 					{/* Footer */}
 					<Box
