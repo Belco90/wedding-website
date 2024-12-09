@@ -28,7 +28,6 @@ const planningLiCss = css({
 })
 
 export default function HomePage() {
-	console.log('home id', headingIds.home)
 	return (
 		<div
 			className={css({
