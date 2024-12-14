@@ -83,15 +83,15 @@ export default function HomePage() {
 						<ul>
 							<li className={planningLiCss}>
 								<FiHeart />
-								<span>12:30 - Bienvenida y ceremonia</span>
+								<span>12:30 - Bienvenida y ceremonia (exterior)</span>
 							</li>
 							<li className={planningLiCss}>
 								<MdOutlineTapas />
-								<span>14:00 - Cóctel y comida</span>
+								<span>14:00 - Cóctel (exterior) y comida (interior)</span>
 							</li>
 							<li className={planningLiCss}>
 								<MdOutlineCelebration />
-								<span>18:00 - Fiesta</span>
+								<span>18:00 - Fiesta (interior y exterior)</span>
 							</li>
 						</ul>
 					</VStack>
